@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Abas Empresas</h1>
+    <a href="contato.html" class="logo"><img src="Valores-de-uma-empresa-capa.jpg" alt="Logo-Valores-de-uma-empresa-capa" width="80px"><h1 class="titulo">empresa</h1></a>
+
+  <!-- Botões das Abas -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab(event, 'empresa1')">Empresa 1</button>
+    <button class="tab-button" onclick="openTab(event, 'empresa2')">Empresa 2</button>
+    <button class="tab-button" onclick="openTab(event, 'empresa3')">Empresa 3</button>
+  </div>
+
+  <!-- Conteúdo das Abas -->
+  <div id="empresa1" class="tab-content active">
+    <h3>Empresa 1</h3>
+    <p>Informações sobre a Empresa 1...</p>
+  </div>
+
+  <div id="empresa2" class="tab-content">
+    <h3>Empresa 2</h3>
+    <p>Informações sobre a Empresa 2...</p>
+  </div>
+
+  <div id="empresa3" class="tab-content">
+    <h3>Empresa 3</h3>
+    <p>Informações sobre a Empresa 3...</p>
+  </div>
+
+  <script>
+    // Função para abrir uma aba específica
+    function openTab(event, tabName) {
+      // Ocultar todas as abas
+      var contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Remover a classe 'active' de todos os botões
+      var buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      // Mostrar a aba que foi clicada
+      document.getElementById(tabName).classList.add('active');
+
+      // Adicionar a classe 'active' ao botão clicado
+      event.currentTarget.classList.add('active');
+    }
+    </script>
+</body>
+</html>
